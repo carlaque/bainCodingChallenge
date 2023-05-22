@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    {% for distance in distances %}
+    <div class="distance">
+        <h3>Distance:</h3>
+        <p>{{distance.source.street}}
+            {{distance.source.number}}
+            {{distance.source.city}}
+            {{distance.source.county}}
+            {{distance.source.state}}
+            {{distance.source.country}}
+            {{distance.source.postalcode}}
+
+        </p>
+        <p>{{distance.destination.street}}
+            {{distance.destination.number}}
+            {{distance.destination.city}}
+            {{distance.destination.county}}
+            {{distance.destination.state}}
+            {{distance.destination.country}}
+            {{distance.destination.postalcode}}
+            
+        </p>
+        <p>{{distance.distance}}</p>
+    </div>
+    {% endfor %}
+    
+
+{% endblock %}

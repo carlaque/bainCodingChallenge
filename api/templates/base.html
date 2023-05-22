@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+    <title>What's the distance</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <a href="/history">GO TO SEARCH HISTORY</a>
+        <a href="/">GO TO SEARCH</a>
+      </header>
+
+      <section>{% block content %} {% endblock %}</section>
+
+      <footer>
+        To calculate the distance between the two address we are using the
+        <a href="https://en.wikipedia.org/wiki/Vincenty%27s_formulae"
+          >Vincenty's formulae</a
+        >
+      </footer>
+    </div>
+  </body>
+</html>

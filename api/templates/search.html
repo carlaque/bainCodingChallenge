@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %}
+
+<form action="" method="post">
+  {% csrf_token %}
+
+  <div>
+    <fieldset>
+      <legend>Source Address:</legend>
+      <label for="">Street:</label>
+      <input type="text" name="source_street" id="" />
+      <label for="">Number:</label>
+      <input type="text" name="source_number" id="" />
+      <label for="">City:</label>
+      <input type="text" name="source_city" id="" />
+      <label for="">County:</label>
+      <input type="text" name="source_county" id="" />
+      <label for="">State:</label>
+      <input type="text" name="source_state" id="" />
+      <label for="">Country:</label>
+      <input type="text" name="source_country" id="" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Destination Address:</legend>
+      <label for="">Street:</label>
+      <input type="text" name="destination_street" id="" />
+      <label for="">Number:</label>
+      <input type="text" name="destination_number" id="" />
+      <label for="">City:</label>
+      <input type="text" name="destination_city" id="" />
+      <label for="">County:</label>
+      <input type="text" name="destination_county" id="" />
+      <label for="">State:</label>
+      <input type="text" name="destination_state" id="" />
+      <label for="">Country:</label>
+      <input type="text" name="destination_country" id="" />
+    </fieldset>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+<div class="message">
+  {% if distance is not None %}
+  <h2>The distance between this two addresses is:</h2>
+  <br />
+  <h2>{{distance}} KM</h2>
+
+  {% endif %} {% if message is not None %}
+  <h2>{{message}}</h2>
+  {% endif %}
+</div>
+{% endblock %}
